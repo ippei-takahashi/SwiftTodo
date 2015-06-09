@@ -51,6 +51,9 @@
                                         <state key="normal" title="追加">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="addTodo" destination="Rul-il-eHk" eventType="touchUpInside" id="Ee6-EW-ISc"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -83,6 +86,7 @@
                     <navigationItem key="navigationItem" title="Todo" id="mad-zy-ffd"/>
                     <connections>
                         <outlet property="tableView" destination="o2G-yM-Vys" id="6Mw-k0-1US"/>
+                        <outlet property="textField" destination="wVg-Wa-j8u" id="Ado-Ar-VuA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Aer-G0-8OD" userLabel="First Responder" sceneMemberID="firstResponder"/>

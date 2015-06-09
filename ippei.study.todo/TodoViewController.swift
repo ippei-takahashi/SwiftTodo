@@ -14,12 +14,21 @@ class TodoViewController: UIViewController {
     // 1 tableViewへの参照
     @IBOutlet private weak var tableView: UITableView!
     
+    // 5 textFieldへの参照
+    @IBOutlet private weak var textField: UITextField!
+    
     // 2 todoList
     private var todoList: [String] = ["test1", "test2", "test3"]
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
+    // 6 todoの追加
+    @IBAction func addTodo() {
+        if textField.text == "" {
+            return
+        }
         
+        todoList.append(textField.text)
+        textField.text = ""
+        textField.resignFirstResponder()
         tableView.reloadData()
     }
     
@@ -39,12 +48,12 @@ class TodoViewController: UIViewController {
 
 // 4 イベントハンドリング時に呼ぶメソッド
 extension TodoViewController: UITableViewDataSource {
-    // テーブルの行数
+    // 4.1 テーブルの行数
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return todoList.count
     }
     
-    // indexPath.row行目のセルの内容
+    // 4.2 indexPath.row行目のセルの内容
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cellId = "TodoCell"
         
@@ -57,5 +66,13 @@ extension TodoViewController: UITableViewDataSource {
         cell?.textLabel?.text = todoList[indexPath.row]
         
         return cell!
+    }
+    
+    // 7 消す処理の追加
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            todoList.removeAtIndex(indexPath.row)
+            tableView.reloadData()
+        }
     }
 }
