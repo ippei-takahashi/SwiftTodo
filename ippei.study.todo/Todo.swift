@@ -10,13 +10,13 @@ import Foundation
 
 //8 Todoをクラス化
 class Todo {
-    let description: String
+    let desc: String
     let createdAt: NSDate
     
     var done: Bool
     
     init(description: String) {
-        self.description = description
+        desc = description
         done = false
         createdAt = NSDate()
     }

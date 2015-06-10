@@ -30,7 +30,7 @@ class TodoCell: UITableViewCell {
             let attributes: [NSObject: AnyObject]? = todo.done ? [
                 NSStrikethroughStyleAttributeName: NSUnderlineStyle.StyleSingle.rawValue
                 ] : nil
-            let description = NSMutableAttributedString(string: todo.description, attributes: attributes)
+            let description = NSMutableAttributedString(string: todo.desc, attributes: attributes)
             
             descriptionLabel.attributedText = description
             
