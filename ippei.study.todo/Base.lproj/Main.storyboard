@@ -69,6 +69,50 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="o2G-yM-Vys">
                                 <rect key="frame" x="0.0" y="144" width="414" height="592"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TodoCell" id="tU9-wQ-dxU" customClass="TodoCell" customModule="ippei_study_todo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tU9-wQ-dxU" id="e4U-n7-VDx">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ygL-ej-wRE">
+                                                    <rect key="frame" x="18" y="12" width="86" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="createdAt" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bPX-aS-GMv">
+                                                    <rect key="frame" x="297" y="26" width="54" height="15"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xDD-JZ-VLR">
+                                                    <rect key="frame" x="361" y="6" width="35" height="30"/>
+                                                    <state key="normal" title="done">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="doneButtonPushed" destination="tU9-wQ-dxU" eventType="touchUpInside" id="h86-Zn-31h"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ygL-ej-wRE" firstAttribute="leading" secondItem="e4U-n7-VDx" secondAttribute="leadingMargin" constant="10" id="5Yq-Hh-BeG"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="xDD-JZ-VLR" secondAttribute="trailing" constant="10" id="9uW-cb-N3h"/>
+                                                <constraint firstAttribute="centerY" secondItem="ygL-ej-wRE" secondAttribute="centerY" id="Am4-b7-gMV"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="bPX-aS-GMv" secondAttribute="bottom" constant="-5" id="Ih1-I4-hvO"/>
+                                                <constraint firstItem="xDD-JZ-VLR" firstAttribute="leading" secondItem="bPX-aS-GMv" secondAttribute="trailing" constant="10" id="XKr-qh-YcI"/>
+                                                <constraint firstAttribute="centerY" secondItem="xDD-JZ-VLR" secondAttribute="centerY" id="xGU-1n-M0M"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="createdAtLabel" destination="bPX-aS-GMv" id="Q1y-RT-76F"/>
+                                            <outlet property="descriptionLabel" destination="ygL-ej-wRE" id="oCp-o3-VHO"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

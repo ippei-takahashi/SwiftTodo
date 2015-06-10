@@ -17,8 +17,8 @@ class TodoViewController: UIViewController {
     // 5 textFieldへの参照
     @IBOutlet private weak var textField: UITextField!
     
-    // 2 todoList
-    private var todoList: [String] = ["test1", "test2", "test3"]
+    // 9 クラス化したTodoに合わせる
+    private var todoList: [Todo] = [Todo(description: "test1"), Todo(description: "test2"), Todo(description: "test3")]
     
     // 6 todoの追加
     @IBAction func addTodo() {
@@ -26,7 +26,9 @@ class TodoViewController: UIViewController {
             return
         }
         
-        todoList.append(textField.text)
+        // 9 クラス化したTodoに合わせる
+        todoList.append(Todo(description: textField.text))
+        
         textField.text = ""
         textField.resignFirstResponder()
         tableView.reloadData()
@@ -57,14 +59,16 @@ extension TodoViewController: UITableViewDataSource {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cellId = "TodoCell"
         
-        var cell = tableView.dequeueReusableCellWithIdentifier(cellId) as? UITableViewCell
+        // 11 クラス化したセルに合わせる
+        var cell = tableView.dequeueReusableCellWithIdentifier(cellId) as? TodoCell
         
         if cell == nil {
-            cell = UITableViewCell(style: .Default, reuseIdentifier: cellId)
+            cell = TodoCell(style: .Default, reuseIdentifier: cellId)
         }
         
-        cell?.textLabel?.text = todoList[indexPath.row]
-        
+        // 11 クラス化したセルに合わせる
+        cell?.todo = todoList[indexPath.row]
+
         return cell!
     }
     
@@ -76,3 +80,4 @@ extension TodoViewController: UITableViewDataSource {
         }
     }
 }
+
