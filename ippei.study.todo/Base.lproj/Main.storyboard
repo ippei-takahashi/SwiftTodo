@@ -109,7 +109,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="createdAtLabel" destination="bPX-aS-GMv" id="Q1y-RT-76F"/>
-                                            <outlet property="descriptionLabel" destination="ygL-ej-wRE" id="oCp-o3-VHO"/>
+                                            <outlet property="descriptionLabel" destination="ygL-ej-wRE" id="vn4-1t-mje"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

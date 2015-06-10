@@ -15,6 +15,7 @@
 		F646127D1B26BE8A00FB2D53 /* TodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F646127C1B26BE8A00FB2D53 /* TodoViewController.swift */; };
 		F68B8E541B27CF3D00CF1473 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68B8E531B27CF3D00CF1473 /* Todo.swift */; };
 		F68B8E591B27D65D00CF1473 /* TodoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68B8E581B27D65D00CF1473 /* TodoCell.swift */; };
+		F68B8E5C1B280A1800CF1473 /* TodoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68B8E5B1B280A1800CF1473 /* TodoRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		F646127C1B26BE8A00FB2D53 /* TodoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoViewController.swift; sourceTree = "<group>"; };
 		F68B8E531B27CF3D00CF1473 /* Todo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		F68B8E581B27D65D00CF1473 /* TodoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoCell.swift; sourceTree = "<group>"; };
+		F68B8E5B1B280A1800CF1473 /* TodoRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 		F64612591B26BDC400FB2D53 /* ippei.study.todo */ = {
 			isa = PBXGroup;
 			children = (
+				F68B8E5A1B280A0A00CF1473 /* repositories */,
 				F68B8E551B27D58B00CF1473 /* views */,
 				F68B8E521B27CF1400CF1473 /* models */,
 				F646127E1B26C4F100FB2D53 /* controllers */,
@@ -140,6 +143,14 @@
 				F68B8E581B27D65D00CF1473 /* TodoCell.swift */,
 			);
 			name = views;
+			sourceTree = "<group>";
+		};
+		F68B8E5A1B280A0A00CF1473 /* repositories */ = {
+			isa = PBXGroup;
+			children = (
+				F68B8E5B1B280A1800CF1473 /* TodoRepository.swift */,
+			);
+			name = repositories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,6 +254,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F68B8E5C1B280A1800CF1473 /* TodoRepository.swift in Sources */,
 				F646127D1B26BE8A00FB2D53 /* TodoViewController.swift in Sources */,
 				F68B8E541B27CF3D00CF1473 /* Todo.swift in Sources */,
 				F646125D1B26BDC400FB2D53 /* AppDelegate.swift in Sources */,

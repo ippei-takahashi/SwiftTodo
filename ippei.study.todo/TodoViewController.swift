@@ -17,8 +17,8 @@ class TodoViewController: UIViewController {
     // 5 textFieldへの参照
     @IBOutlet private weak var textField: UITextField!
     
-    // 9 クラス化したTodoに合わせる
-    private var todoList: [Todo] = [Todo(description: "test1"), Todo(description: "test2"), Todo(description: "test3")]
+    // 15 Repositoryからデータを読み込み
+    private var todoList: [Todo] = TodoRepository.restoreData()
     
     // 6 todoの追加
     @IBAction func addTodo() {
@@ -40,11 +40,19 @@ class TodoViewController: UIViewController {
         
         // 3 tableViewのイベントをハンドリング
         tableView.dataSource = self
+        
+        // 16 バックグラウンド遷移時にRepositoryへデータを保存
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "storeData", name: UIApplicationWillResignActiveNotification, object: nil)
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // 16 バックグラウンド遷移時にRepositoryへデータを保存
+    func storeData() {
+        TodoRepository.storeData(todoList)
     }
 }
 
